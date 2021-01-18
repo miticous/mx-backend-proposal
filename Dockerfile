@@ -1,12 +1,12 @@
 FROM node:14-alpine
-LABEL Author Carmine DiMascio <cdimascio@gmail.com>
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 COPY . /usr/src/app
-RUN npm install
+RUN yarn install
+RUN yarn compile
 
-EXPOSE 3000
+EXPOSE 8080
 
-CMD [ "npm", "start" ]
+CMD [ "yarn", "start" ]

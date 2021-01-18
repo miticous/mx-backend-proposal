@@ -12,3 +12,7 @@ services:
             - POSTGRES_DB=mx-backend-proposal
             - POSTGRES_USER=postgres
             - POSTGRES_PASSWORD=postgres
+    server:
+        image: murilodev/mx-backend-proposal:latest
+        ports:
+            - "8080:8080"
