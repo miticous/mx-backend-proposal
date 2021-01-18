@@ -14,12 +14,11 @@ export default (sequelize, DataTypes) => {
       },
     },
     {
-      freezeTableName: true,
-      tableName: 'members_types',
-      underscored: true,
+      tableName: 'member_types',
+      underscored: false,
       schema: process.env.DATABASE_SCHEMA || 'public',
-      createdAt: 'created_at',
-      updatedAt: 'updated_at',
+      createdAt: 'createdAt',
+      updatedAt: 'updatedAt',
     },
   );
 
