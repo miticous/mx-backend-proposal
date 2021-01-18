@@ -3,6 +3,11 @@ import { validate } from 'express-validation';
 import MemberController from './MemberController';
 import MemberValidation from './MemberValidation';
 
-export default express
-  .Router()
-  .post('/:id', validate(MemberValidation.post), MemberController.post);
+const Router = express.Router();
+
+Router
+  .route('/:id')
+  .post(validate(MemberValidation.post), MemberController.post)
+  .get(validate(MemberValidation.get), MemberController.get);
+
+export default Router;

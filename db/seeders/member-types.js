@@ -1,11 +1,11 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('MemberTypes', {
+    await queryInterface.createTable('member_types', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       description: {
         type: Sequelize.STRING,
@@ -17,21 +17,29 @@ module.exports = {
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
-      }
+        type: Sequelize.DATE,
+      },
     });
 
-    await queryInterface.bulkInsert('MemberTypes', [{
+    await queryInterface.bulkInsert('member_types', [{
       id: 1,
-      description: 'Estudioso',
+      description: 'ADMIN',
       status: 'ACTIVE',
       createdAt: new Date(),
       updatedAt: new Date(),
-    }])
+    },
+    {
+      id: 2,
+      description: 'COMMON',
+      status: 'ACTIVE',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    },
+    ]);
   },
-  down: (queryInterface, Sequelize) => await queryInterface.dropTable('MemberTypes')
+  down: async (queryInterface, Sequelize) => queryInterface.dropTable('member_types'),
 };
