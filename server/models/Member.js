@@ -30,10 +30,10 @@ export default (sequelize, DataTypes) => {
     },
     {
       tableName: 'members',
-      underscored: true,
+      underscored: false,
       schema: process.env.DATABASE_SCHEMA || 'public',
-      createdAt: 'created_at',
-      updatedAt: 'updated_at',
+      createdAt: 'createdAt',
+      updatedAt: 'updatedAt',
     },
   );
 

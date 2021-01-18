@@ -13,7 +13,8 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "migrate": "babel-node ./db/runMigrations.js",
-    "sequelize:seed": "NODE_ENV=development npx sequelize-cli db:seed:all"
+    "sequelize:seed": "NODE_ENV=development npx sequelize-cli db:seed:all",
+    "sequelize:unseed": "NODE_ENV=development npx sequelize-cli db:seed:undo:all"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
